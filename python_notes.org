@@ -1,0 +1,56 @@
+* Syntaxes
+** function
+def <function_name>(<parameters>):
+    ....
+    return
+** if-else
+if <condition>:
+    ....
+else:
+    ....
+
+It is helpful to note that Python does not support in line
+assigment in the if statement, so you cannot end up accidentally
+assigning values when you want to compare!
+
+
+* Functions
+** Begin with a keyword : def
+*** The def line is terminated with a colon (:)
+** Triple quotes right after the def line indicates a doc string
+*** doc strings help provide context sensitive information
+** Python functions have attributes that are available at runtime
+** A function is an object!
+*** It has a built in attribute, __doc__, the doc string
+
+
+** Indentation is very important!
+*** A function does not have an explicit beginning and an end
+*** Defined merely by indentation
+**** Applies to all code blocks, such as if, while, etc.
+
+
+* Modules
+** Import modules using the import command (can be .py files)
+*** Once imported, you can reference any of its public classes, functions, etc
+** When you import new modules, python looks in all places in sys.path
+*** To view existing paths: sys.path
+*** To add a new path: sys.path.append('mynew/path')
+**** This effect is not permanent, and lasts only as long as the session
+** If you want to use functions in imported module, reference it with a dot
+*** eg. module.functionname
+** Some built-in attributes
+*** __name__ 
+If you import the module, then the __name__ is the filename, otherwise
+if you run it as a program, it has a special value __main__
+*** __doc__
+Reads the doc string in the function
+
+* Dictionaries
+** Define one-to-one relationships between keys and values
+** You can get values by key, but not keys by values
+** Commands
+*** Defining keys
+d = {"a":"b","c':"d"}
+*** Accessing values
+d["a"] ------> b
