@@ -46,11 +46,21 @@ if you run it as a program, it has a special value __main__
 *** __doc__
 Reads the doc string in the function
 
+
 * Dictionaries
 ** Define one-to-one relationships between keys and values
 ** You can get values by key, but not keys by values
+** Dictionaries, by definition, are unordered.
+** Dictionary Keys are case sensitive.
+** Dictionary values can be of any data type. while keys are of a particular type
+*** For keys: strings, integers are allowed
+** 
 ** Commands
 *** Defining keys
-d = {"a":"b","c':"d"}
+    d = {"a":"b","c':"d"}
 *** Accessing values
-d["a"] ------> b
+    d["a"] ------> b
+*** Modifying values
+    d["a"]="new"
+*** Adding new values
+    d["e"]="f"
