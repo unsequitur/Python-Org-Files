@@ -54,7 +54,6 @@ Reads the doc string in the function
 ** Dictionary Keys are case sensitive.
 ** Dictionary values can be of any data type. while keys are of a particular type
 *** For keys: strings, integers are allowed
-** 
 ** Commands
 *** Defining keys
     d = {"a":"b","c':"d"}
@@ -64,3 +63,24 @@ Reads the doc string in the function
     d["a"]="new"
 *** Adding new values
     d["e"]="f"
+*** Deleting dictionaries
+**** del d["a"] -> Lets you delete individual keys
+**** d.clear()  -> Clears an entire dictionary
+
+* Lists
+** Very similar to arrays in C++, but have the advantage of handling multiple data types
+** List indices start from zero
+** Negative indices will start accessing the list from backwards
+*** One way to see negative indices is actual_index = length(list)-index
+** List manipulation is very similar to MATLAB's syntax
+** Commands
+*** Initializing a list
+**** l = ["a","b","x","y"];
+*** Accessing an element
+**** li[1], li[-1]
+*** Splicing a list
+**** li[1:4]. It should be noted that the 1st element will be included, while the 4th element will not.
+**** From beginning to index (but not including the index)  : li[:index]
+**** From index to end : li[index:]
+**** All the elements : li[:]
+*** 
