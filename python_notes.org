@@ -65,7 +65,8 @@ Reads the doc string in the function
     d["e"]="f"
 *** Deleting dictionaries
 **** del d["a"] -> Lets you delete individual keys
-**** d.clear()  -> Clears an entire dictionary
+**** d.clear()  -> Clears an entire dictionar
+
 
 * Lists
 ** Very similar to arrays in C++, but have the advantage of handling multiple data types
@@ -78,9 +79,54 @@ Reads the doc string in the function
 **** l = ["a","b","x","y"];
 *** Accessing an element
 **** li[1], li[-1]
-*** Splicing a list
+*** Slicing a list
 **** li[1:4]. It should be noted that the 1st element will be included, while the 4th element will not.
 **** From beginning to index (but not including the index)  : li[:index]
 **** From index to end : li[index:]
 **** All the elements : li[:]
-*** 
+*** Adding elements to a list
+**** append
+Adds a single element to the end of the list. Going with the li example, li.append("new").
+**** insert
+Inserts a single element at a desired position in the list. Eg., li.insert(2,"new").
+**** extend
+Concatenates the current list and a new list as specified in the argument. Eg. li.extend(["two","elements"])
+
+**** Difference between extend and append
+Append adds a _single_ element of _any_ data type to the end of a list, while extend takes _only_ a list as an argument,
+and adds each element of the list to the original list. For example,
+len(li) = 3
+li.append(["a","b","c"]) ----> len(li) = 4
+li(4) = ['a','b','c']
+
+and
+
+len(li) = 3
+li.extend(["a","b","c"]) ----> len(li) = 6
+li(4) = 'a'
+
+*** Finding elements in a list
+**** index
+index finds the _first_ occurrence of a value in the list and returns the index
+Eg. li.index("new")
+If the object you are searching for is not in the list, then python raises an exception.
+**** in
+Used as a test to see if an object is in the list. Eg. "new" in li
+This returns a true or a false logical value.
+
+*** Deleting elements in a list
+**** remove
+This removes only the first occurence of a value in a list.
+Eg. li.remove("new")
+Note that this does not return a value, unlike pop.
+**** pop
+Similar to the pop concept in stacks, it removes the last element in the list and returns the value removed.
+Eg. li.pop()
+** Operators
+*** +
+This concatenates 2 lists (similar to extend) and returns a _new_ list as a value (unlike extend, which just alterns an existing list). This makes extend a faster command to use on larger arrays
+*** +=
+Similar to +, with the C equivalent. (This is overloaded with lists, strings, integers and user-defined classes).
+*** *
+Works as a repeater. 
+Eg. li = [1,2]*3 ---> [1,2,1,2,1,2]
