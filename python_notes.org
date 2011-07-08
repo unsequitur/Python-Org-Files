@@ -122,6 +122,8 @@ Note that this does not return a value, unlike pop.
 **** pop
 Similar to the pop concept in stacks, it removes the last element in the list and returns the value removed.
 Eg. li.pop()
+*** Additional operations
+**** sort()
 ** Operators
 *** +
 This concatenates 2 lists (similar to extend) and returns a _new_ list as a value (unlike extend, which just alterns an existing list). This makes extend a faster command to use on larger arrays
@@ -130,3 +132,16 @@ Similar to +, with the C equivalent. (This is overloaded with lists, strings, in
 *** *
 Works as a repeater. 
 Eg. li = [1,2]*3 ---> [1,2,1,2,1,2]
+
+
+* Tuples
+** A tuple is a list that cannot be changed once created.
+** It is defined in the same way as a list, but with parantheses instead of square brackets.
+** You cannot find elements in a tuple, but you can check if an element exists using the in command.
+** They are _faster_ than lists
+** To convert between lists and tuples, we use two built in commands in python
+*** tuple
+*** list
+** Tuples can be used as dictionary keys (since dictionary keys must be immutable.)
+*** Note that this condition means that tuples of lists are considered dictionary unsafe
+
