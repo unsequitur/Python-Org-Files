@@ -1,3 +1,8 @@
+* General Notes
+** When you need to break a long command or any expression _not_ in brackets, use a backslash (\)
+** You can break expressions in parantheses (tuples), square brackets (lists), or curly brackets (dictionaries) even without slashes, though it is recommended you use them for readability purposes.
+
+
 * Syntaxes
 ** function
 def <function_name>(<parameters>):
@@ -23,7 +28,6 @@ assigning values when you want to compare!
 ** A function is an object!
 *** It has a built in attribute, __doc__, the doc string
 
-
 ** Indentation is very important!
 *** A function does not have an explicit beginning and an end
 *** Defined merely by indentation
@@ -48,6 +52,7 @@ Reads the doc string in the function
 
 
 * Dictionaries
+** {}
 ** Define one-to-one relationships between keys and values
 ** You can get values by key, but not keys by values
 ** Dictionaries, by definition, are unordered.
@@ -69,6 +74,7 @@ Reads the doc string in the function
 
 
 * Lists
+** []
 ** Very similar to arrays in C++, but have the advantage of handling multiple data types
 ** List indices start from zero
 ** Negative indices will start accessing the list from backwards
@@ -133,15 +139,56 @@ Similar to +, with the C equivalent. (This is overloaded with lists, strings, in
 Works as a repeater. 
 Eg. li = [1,2]*3 ---> [1,2,1,2,1,2]
 
+** Mapping Lists
 
 * Tuples
+** ()
 ** A tuple is a list that cannot be changed once created.
 ** It is defined in the same way as a list, but with parantheses instead of square brackets.
 ** You cannot find elements in a tuple, but you can check if an element exists using the in command.
 ** They are _faster_ than lists
+** To define a tuple with one element, use (element,)
 ** To convert between lists and tuples, we use two built in commands in python
 *** tuple
 *** list
 ** Tuples can be used as dictionary keys (since dictionary keys must be immutable.)
 *** Note that this condition means that tuples of lists are considered dictionary unsafe
+    
 
+* Variables
+** You cannot reference variables without declaring them first
+** You can assign multiple values using paranthesis
+*** (x,y,z) = range(3) or v = ('a','b'); (x,y)=v
+
+
+* Formatting Output
+** Strings
+*** You can use the %s placeholder, akin to sprintf in C
+*** If uncomfortable with the %s syntax, you can use '+' as a string concatenation operator
+*** Examples:
+**** Using %s
+uid = 'sa'
+pwd = 'secret'
+print "%s is not a good password for %s" % (pwd, uid)
+userCount = '6'
+print 'Number of users: %s' % (userCount,)
+Note: (userCount,) is a tuple with one element.
+
+**** Using +
+print pwd + 'is not a good password for' + uid
+print "Users connected: "+ userCount
+You can _only_ concatenate strings. If you try to concatenate a string with any other data type, an exception is raised.
+
+** Numbers
+*** Using %d
+Formats the number as an integer
+*** Using %f
+**** print "%.2f" % 5.352
+Truncates to 2 decimal places
+**** print "%+.2f" % -0.4245
+Displays a + or - sign before the number
+
+
+* Built in Python Functions
+** range(n)
+   Takes in n as a parameter and returns a list of integers numbered from 0 to n-1.
